@@ -1,10 +1,16 @@
 class ReverseString {
 
     String reverse(String inputString) {
-        if (inputString.length() > 1) {
-            return reverse(inputString.substring(1)).concat(inputString.substring(0, 1));
+        char[] arr = inputString.toCharArray();
+        char c;
+        int halfLen = arr.length / 2;
+
+        for (int i = 0; i < halfLen; i++) {
+            c = arr[arr.length - i - 1];
+            arr[arr.length - i - 1] = arr[i];
+            arr[i] = c;
         }
-        return inputString;
+        return new String(arr);
     }
 
 }
