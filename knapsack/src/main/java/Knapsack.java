@@ -6,10 +6,10 @@ public class Knapsack {
         int[][] dp = new int[items.size() + 1][capacity + 1];
 
         for (int i = 1; i <= items.size(); i++) {
-            for (int j = 0; j <= capacity; j++) {
-                var weight = items.get(i - 1).getWeight();
-                var value = items.get(i - 1).getValue();
+            var weight = items.get(i - 1).getWeight();
+            var value = items.get(i - 1).getValue();
 
+            for (int j = 0; j <= capacity; j++) {
                 if (weight > j) {
                     dp[i][j] = dp[i - 1][j];
                 } else {
