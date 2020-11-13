@@ -17,6 +17,19 @@ class Pair {
         return y;
     }
 
+    public Pair plus(Pair other) {
+        return new Pair(x + other.x, y + other.y);
+    }
+
+    public Pair times(int n) {
+        return new Pair(x * n, y * n);
+    }
+
+    public boolean within(Pair max) {
+        return (x > 0 && x <= max.x) &&
+                (y > 0 && y <= max.y);
+    }
+
     @Override
     public boolean equals(final Object o) {
         if (this == o) {
@@ -39,3 +52,4 @@ class Pair {
     }
 
 }
+
